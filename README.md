@@ -23,5 +23,7 @@ It's as easy as including the blitter.js file. No dependencies.
     
     blitter.start();
     
+    // blitter.stop(); to stop the madness.
+    
     document.body.appendChild( blitter.getContainer() );
 
