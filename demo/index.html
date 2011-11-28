@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blitter</title>
+
+        <script type="text/javascript" src="../src/blitter.js"></script>
+        
+        <style>
+            
+            body { background: #333; }
+            
+        </style>
+    </head>
+    
+    <body>
+
+        <script>
+            
+            var circleThingy = new Blitter({
+                width: 38,
+                height: 38,
+                resource: "images/loading-sprite.png",
+                frameRate: 33
+            });
+            
+            document.body.appendChild( circleThingy.getContainer() );
+            
+        </script>
+    </body>
+</html>
