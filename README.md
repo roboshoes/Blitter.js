@@ -31,7 +31,7 @@ API
        
     blitter.play();
     blitter.stop();
-    blitter.gotoAndPlay();
-    blitter.gotoAndStop();
+    blitter.gotoAndPlay(frame);
+    blitter.gotoAndStop(frame);
     blitter.getContainer();
 
