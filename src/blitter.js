@@ -24,9 +24,19 @@ var Blitter = function(options) {
         clearInterval(interval);
     }
     
-    this.start = function() {
+    this.play = function() {
         self.stop();
         interval = setInterval(render, 1000 / frameRate);
+    }
+    
+    this.gotoAndPlay = function(frame) {
+        gotoFrame(frame);
+        self.play();
+    }
+    
+    this.gotoAndStop = function(frame) {
+        self.stop();
+        gotoFrame(frame);
     }
     
     this.getContainer = function() {
@@ -66,7 +76,7 @@ var Blitter = function(options) {
         frames = rows * cols;
         currentFrame = 0;
         
-        autoplay && self.start();
+        autoplay && self.play();
     }
     
     var render = function() {
@@ -82,6 +92,11 @@ var Blitter = function(options) {
         }
         
         currentFrame = (currentFrame + 1) % frames;
+    }
+    
+    var gotoFrame = function(frame) {
+        currentFrame = Math.min(Math.max(frame, 0), frames);
+        render();
     }
     
     init();

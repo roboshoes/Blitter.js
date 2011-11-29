@@ -17,13 +17,21 @@ It's as easy as including the blitter.js file. No dependencies.
         width: 40,
         height: 40,
         autoplay: false,  // default is true
-        frameRate: 40,   // default is 30
+        frameRate: 40,    // default is 30
         target: null      // if an existing dom element should be used
     });
-    
-    blitter.start();
-    
-    // blitter.stop(); to stop the madness.
+
     
     document.body.appendChild( blitter.getContainer() );
+    
+API
+---
+
+    var blitter = new Blitter({...});
+       
+    blitter.play();
+    blitter.stop();
+    blitter.gotoAndPlay();
+    blitter.gotoAndStop();
+    blitter.getContainer();
 
