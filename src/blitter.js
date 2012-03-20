@@ -5,7 +5,7 @@ var Blitter = function(options) {
     var width = options.width || 100;
     var height = options.height || 100;
     var frameRate = options.frameRate || 33;
-    var autoplay = options.autoplay || true;
+    var autoplay = options.autoplay ? true : false;
     
     var useCanvas = false;
     var image = new Image();
@@ -74,7 +74,7 @@ var Blitter = function(options) {
         cols = Math.ceil(image.width / width);
         
         frames = rows * cols;
-        currentFrame = 0;
+        gotoFrame(0);
         
         autoplay && self.play();
     }
